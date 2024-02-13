@@ -33,4 +33,18 @@ jobs:
         port: ${{ secrets.PORT }}
         command_timeout: 30m
         script: | 
-          ls -lath .
+          sudo yum install git -y 
+          if [ -d "/opt/rhel8-bootstrap" ]; then
+            cd /opt/rhel8-bootstrap
+            git config --global --add safe.directory /opt/rhel8-bootstrap
+            git config pull.rebase false
+            git pull
+          else
+            cd /opt/
+            sudo usermod -aG users ${{ secrets.USERNAME }}
+            sudo chown -R root:users /opt
+            sudo chmod -R g+w /opt
+            git clone https://github.com/tosin2013/rhel8-bootstrap.git
+          fi
+          cd /opt/rhel8-bootstrap
+          sudo ./setup-bastion.sh
