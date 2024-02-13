@@ -33,5 +33,4 @@ jobs:
         port: ${{ secrets.PORT }}
         command_timeout: 30m
         script: | 
-          la -lath .
-   
+          ls -lath .
