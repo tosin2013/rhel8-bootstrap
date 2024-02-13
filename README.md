@@ -3,21 +3,16 @@
 This GitHub Actions workflow automates the configuration of a Red Hat Enterprise Linux 8 (RHEL 8) bastion host. Bastion hosts provide a secure and controlled entry point into a network.
 
 ## Workflow Triggers
-
+* [configure-rhel8-bastion.yml](.github/workflows/configure-rhel8-bastion.yml)  
 The workflow can be triggered in two ways:
 
 * **Manual Trigger (workflow_dispatch):** 
    - Start the workflow from the "Actions" tab of your GitHub repository.
    - Provide input values for:
       - hostname
-      - domain
-      - forwarder
 * **Webhook Trigger (repository_dispatch):**
    - Triggered by external systems using webhooks.
    - The webhook payload should include data for:
-      - target_server
-      - domain
-      - forwarder
       - hostname
 
 ## Workflow Steps
