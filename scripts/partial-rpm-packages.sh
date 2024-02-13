@@ -28,7 +28,8 @@ sudo dnf -y install \
   fuse-overlayfs \
   containernetworking-plugins \
   iputils \
-  iproute
+  iproute \
+  tmux
 
 sudo dnf -y groupinstall "Development Tools"
 
@@ -61,3 +62,11 @@ python3 -m pip install kubernetes
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 sudo mv kustomize /usr/local/bin/
+
+if [ ! -f ~/.tmux/.tmux.conf.local ];
+then 
+    cd ~
+    git clone https://github.com/gpakosz/.tmux.git
+    ln -s -f .tmux/.tmux.conf
+    cp .tmux/.tmux.conf.local .
+fi
