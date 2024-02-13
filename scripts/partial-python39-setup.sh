@@ -16,4 +16,6 @@ sudo alternatives --set python3 /usr/bin/python3.9
 # - For Ansible-Navigator
 curl -sSL https://raw.githubusercontent.com/ansible/ansible-navigator/main/requirements.txt | python3 -m pip install -r /dev/stdin
 # - For Ansible Collections running on the bastion?
-python3 -m pip install -r $HOME/redhat-edge-ai-industrial-demo-infra/hack/bastion-requirements.txt
+python3 -m pip install -r $HOME/rhel8-bootstrap/scripts/bastion-requirements.txt
+
+
