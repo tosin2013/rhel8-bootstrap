@@ -29,8 +29,6 @@ The workflow can be triggered in two ways:
 
 ## setup-bastion.sh Script 
 
-(Note: A portion of this script's code may be missing, these are likely elements involved)
-
 * **System Updates:**  Updates packages on the target system.
 * **User Management:** Configures users and groups for access control.
 * **Firewall Configuration:**  Adjusts firewall rules, limiting access to necessary ports.
