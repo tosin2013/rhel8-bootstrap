@@ -77,10 +77,7 @@ fi
 # - Ansible
 # - Ansible Navigator
 # - Pip modules
-result=$(whereis ansible-navigator)
-
-# If the result only contains the name "ansible-navigator:" without a path, it means it's not installed
-if [[ $result == "ansible-navigator:" ]]; then
+if ! command -v ansible-navigator &> /dev/null; then
     echo "ansible-navigator not found. Installing..."
     ./scripts/partial-python39-setup.sh
 else
