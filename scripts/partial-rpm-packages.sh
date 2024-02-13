@@ -63,6 +63,12 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 sudo mv kustomize /usr/local/bin/
 
+if [ ! -d /home/lab-user/.run/containers ]; 
+then
+    mkdir -p /home/lab-user/.run/containers
+    sudo chown -R lab-user:users /home/lab-user/.run/containers
+fi 
+
 if [ ! -f ~/.tmux/.tmux.conf.local ];
 then 
     cd ~
